@@ -2,6 +2,11 @@ let chart = document.getElementById('myChart');
 
 $(document).ready(function () {
     if ($('#myChart').html() === "") {
+        fetch('/csv_pressure_temperature_light_sound.csv')
+            .then(response => response.text())
+            .then((data) => {
+                console.log(data)
+            })
         $.get('/csv_pressure_temperature_light_sound.csv', function (data) { dataToArrays(data) }, 'text');
     }
 
