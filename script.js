@@ -2,14 +2,7 @@ let chart = document.getElementById('myChart');
 
 $(document).ready(function () {
     if ($('#myChart').html() === "") {
-        $.ajax({
-            url: './csv_pressure_temperature_light_sound.csv',
-            dataType: "text",
-            success: function(data){
-                dataToArrays(data);
-            }
-          });
-        // $.get('./csv_pressure_temperature_light_sound.csv', function (data) { dataToArrays(data) }, 'text');
+        $.get('/csv_pressure_temperature_light_sound.csv', function (data) { dataToArrays(data) }, 'text');
     }
 
     document.getElementById('csvFile').addEventListener('change', upload, false);
@@ -150,7 +143,7 @@ function getColor() {
 }
 
 function upload(evt) {
-    if(chart != null) {
+    if (chart != null) {
         chart.destroy();
     }
 
