@@ -3,7 +3,7 @@ let chart = document.getElementById('myChart');
 $(document).ready(function () {
     if ($('#myChart').html() === "") {
         console.log('here');
-        $.get('csv_pressure_temperature_light_sound.csv', function (data) { dataToArrays(data) }, 'text');
+        $.get('./csv_pressure_temperature_light_sound.csv', function (data) { dataToArrays(data) }, 'text');
     }
 
     document.getElementById('csvFile').addEventListener('change', upload, false);
