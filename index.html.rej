@@ -1,0 +1,9 @@
+diff a/index.html b/index.html	(rejected hunks)
+@@ -17,6 +17,7 @@
+ 
+     <div class="container-fluid">
+         <div class="row" style="height:500px">
++            <div class="col-sm-12"><canvas id="myChart"></canvas></div>
+         </div>
+ 
+         <div class="row mt-4">
