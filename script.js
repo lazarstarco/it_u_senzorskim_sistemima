@@ -50,7 +50,7 @@ function createChart(parsedData) {
         }
     }
 
-    if(headingArray.includes("Comment")) {
+    if(headingArray['title'].includes('Comment')) {
         dataMatrix.splice(headingArray.indexOf("Comment", 1));
         headingArray.splice(headingArray.indexOf("Comment", 1));
     }
