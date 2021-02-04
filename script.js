@@ -13,6 +13,7 @@ function dataToArrays(data) {
     let rawData = Papa.parse(data);
     let parsedData = Papa.parse(data, { header: true });
     let index = parsedData.meta.fields;
+    $('#parsedData').text("");
 
     parsedData.data.forEach(element => {
         let ielement = element;
