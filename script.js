@@ -50,6 +50,11 @@ function createChart(parsedData) {
         }
     }
 
+    if(headingArray.includes("Comment")) {
+        dataMatrix.splice(headingArray.indexOf("Comment", 1));
+        headingArray.splice(headingArray.indexOf("Comment", 1));
+    }
+
     console.log(parsedData);
     console.log(dataMatrix);
     console.log(headingArray);
