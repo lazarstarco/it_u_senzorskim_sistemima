@@ -2,7 +2,7 @@ let chart = document.getElementById('myChart');
 
 $(document).ready(function () {
     if ($('#myChart').html() === "") {
-        $.get('https://lazarstarco.github.io/csv_pressure_temperature_light_sound.csv', function (data) { dataToArrays(data) }, 'text');
+        $.get('https://lazarstarco.github.io/main.csv', function (data) { dataToArrays(data) }, 'text');
     }
 
     document.getElementById('csvFile').addEventListener('change', upload, false);
