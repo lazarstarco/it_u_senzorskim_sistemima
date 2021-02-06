@@ -11,14 +11,11 @@ $(document).ready(function () {
 
 function dataToArrays(data) {
     let rawData = Papa.parse(data);
-    let parsedData = Papa.parse(data, { header: true });
-    let index = parsedData.meta.fields;
     $('#parsedData').text("");
 
-    parsedData.data.forEach(element => {
-        let ielement = element;
-        index.forEach(indexElement => {
-            $('#parsedData').append(ielement[indexElement]);
+    rawData.data.forEach(element => {
+        element.forEach(element => {
+            $('#parsedData').append(element);
             $('#parsedData').append('&#x9;');
         });
         $('#parsedData').append('<br />');
