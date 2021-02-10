@@ -11,15 +11,7 @@ $(document).ready(function () {
 
 function dataToArrays(data) {
     let rawData = Papa.parse(data);
-    $('#parsedData').text("");
-
-    rawData.data.forEach(element => {
-        element.forEach(element => {
-            $('#parsedData').append(element);
-            $('#parsedData').append('&#x9;');
-        });
-        $('#parsedData').append('<br />');
-    });
+   
     createChart(rawData);
 }
 
@@ -56,6 +48,21 @@ function createChart(parsedData) {
         dataMatrix.splice(commentIndex, 1);
         headingArray.splice(commentIndex, 1);
     }
+
+    let html = '';
+    html += '<table class="table"><tbody>';
+
+    parsedData.data.forEach(element => {
+        if (element.some(function (el) { return el !== null; })) {
+            html += '<tr>';
+            element.forEach(element => {
+                html += '<td>' + (element !== null ? element : '') + '</td>';
+            });
+            html += '</tr>';
+        }
+    });
+    html += '</tbody></table>'
+    $('#parsedData').html(html);
 
     console.log(parsedData);
     console.log(dataMatrix);
